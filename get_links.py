@@ -11,7 +11,7 @@ def getPlaylistLinks(url):
     for link in soup.find_all("a", {'class':'yt-simple-endpoint style-scope yt-formatted-string'}):
         href = link.get('href')
         if href.startswith('watch?'):
-            href = href.rstrip('&list=LM')
+            href = href.rstrip('&amp;list=LM')
             playlist.append(domain + href)
             print(domain + href + '\n')
     df = pd.DataFrame(playlist)
