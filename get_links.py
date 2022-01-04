@@ -17,4 +17,4 @@ def getPlaylistLinks(url):
     df = pd.DataFrame(playlist)
     df.to_csv('./resources/playlist.csv', index=False)
 
-getPlaylistLinks('https://raw.githubusercontent.com/rb25s13/ytp/main/playlist.html')
+getPlaylistLinks('https://raw.githubusercontent.com/rb25s13/ytp/main/resources/playlist.html')
