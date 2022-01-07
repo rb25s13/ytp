@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 import pandas as pd
 
-def getPlaylistLinks(url):
+def get_playlist_links(url):
     sourceCode = requests.get(url).text
     soup = BeautifulSoup(sourceCode, 'html.parser')
     domain = 'https://www.youtube.com/'
@@ -17,4 +17,4 @@ def getPlaylistLinks(url):
     df = pd.DataFrame(playlist,columns=['link'])
     df.to_csv('./resources/playlist.csv', index=False)
 
-getPlaylistLinks('https://raw.githubusercontent.com/rb25s13/ytp/main/resources/playlist.html')
+get_playlist_links('https://raw.githubusercontent.com/rb25s13/ytp/main/resources/playlist.html')
